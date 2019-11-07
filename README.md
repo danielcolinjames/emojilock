@@ -1,1 +1,2 @@
-# emojilock.app
+# emojilock website
+https://emojilock.app
