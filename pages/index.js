@@ -1,87 +1,69 @@
 import React from 'react'
 import Head from 'next/head'
-import Nav from '../components/nav'
+import { useForm } from "@statickit/react";
+
+const OptInForm = () => {
+const [state, submit] = useForm("contact-form");
+
+  if (state.succeeded) {
+    return (
+      <p className="pb-3 font-bold text-gray-800 text-lg">
+        Thank you for signing up!
+      </p>
+    );
+  }
+
+  return (
+    <form onSubmit={submit}>
+      <p className="pb-3 font-bold text-gray-800 text-lg">
+        Coming soon! Sign up to find out when we launch.
+      </p>
+      <div className="flex flex-wrap items-center">
+        <label htmlFor="email" className="hidden">
+          Email address
+        </label>
+        <input
+          id="email"
+          type="email"
+          name="email"
+          className="flex-grow mr-3 mb-3 p-3 rounded-lg bg-gray-200 text-gray-700 text-lg border border-gray-200 focus:outline-none focus:border-gray-500 focus:bg-white"
+          placeholder="Your email address"
+          required
+        />
+        <button
+          type="submit"
+          className="mb-3 px-5 py-3 rounded-lg border border-purple-700 bg-purple-700 text-lg font-bold text-white"
+        >
+          Notify me
+        </button>
+      </div>
+    </form>
+  )
+}
 
 const Home = () => (
   <div>
     <Head>
-      <title>Home</title>
-      <link rel='icon' href='/favicon.ico' />
+      <title>EmojiLock</title>
+      <link
+        href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+        rel="stylesheet"
+      />
     </Head>
-
-    <Nav />
-
-    <div className='hero'>
-      <h1 className='title'>Welcome to Next.js!</h1>
-      <p className='description'>
-        To get started, edit <code>pages/index.js</code> and save to reload.
-      </p>
-
-      <div className='row'>
-        <a href='https://nextjs.org/docs' className='card'>
-          <h3>Documentation &rarr;</h3>
-          <p>Learn more about Next.js in the documentation.</p>
-        </a>
-        <a href='https://nextjs.org/learn' className='card'>
-          <h3>Next.js Learn &rarr;</h3>
-          <p>Learn about Next.js by following an interactive tutorial!</p>
-        </a>
-        <a
-          href='https://github.com/zeit/next.js/tree/master/examples'
-          className='card'
-        >
-          <h3>Examples &rarr;</h3>
-          <p>Find other example boilerplates on the Next.js GitHub.</p>
-        </a>
+    <div className="mx-auto container px-8 py-16 sm:py-32 antialiased">
+      <div className="max-w-lg mx-auto">
+        <div className="flex flex-wrap items-center pb-4 text-5xl font-bold text-gray-800">
+          <h1 className="mr-3">EmojiLock</h1>
+          <div className="mt-2 px-3 py-1 text-sm font-bold bg-orange-300 text-orange-800 rounded-full">
+            Coming Soon
+          </div>
+        </div>
+        <p className="pb-6 text-gray-700 text-lg">
+          EmojiLock will make your Caps Lock key useful again.
+        </p>
+        <OptInForm />
       </div>
     </div>
-
-    <style jsx>{`
-      .hero {
-        width: 100%;
-        color: #333;
-      }
-      .title {
-        margin: 0;
-        width: 100%;
-        padding-top: 80px;
-        line-height: 1.15;
-        font-size: 48px;
-      }
-      .title,
-      .description {
-        text-align: center;
-      }
-      .row {
-        max-width: 880px;
-        margin: 80px auto 40px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-      }
-      .card {
-        padding: 18px 18px 24px;
-        width: 220px;
-        text-align: left;
-        text-decoration: none;
-        color: #434343;
-        border: 1px solid #9b9b9b;
-      }
-      .card:hover {
-        border-color: #067df7;
-      }
-      .card h3 {
-        margin: 0;
-        color: #067df7;
-        font-size: 18px;
-      }
-      .card p {
-        margin: 0;
-        padding: 12px 0 0;
-        font-size: 13px;
-        color: #333;
-      }
-    `}</style>
   </div>
 )
 
