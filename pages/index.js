@@ -3,7 +3,11 @@ import Head from 'next/head'
 import { useForm } from "@statickit/react";
 
 const OptInForm = () => {
-const [state, submit] = useForm("contact-form");
+  const [state, submit] = useForm({
+    site: '818599f0408b',
+    form: 'contact-form'
+  });
+
 
   if (state.succeeded) {
     return (
@@ -59,7 +63,7 @@ const Home = () => (
           </div>
         </div>
         <p className="pb-6 text-gray-700 text-lg">
-          EmojiLock will make your Caps Lock key useful again.
+          EmojiLock will make your Caps Lock key useful again 🤘
         </p>
         <OptInForm />
       </div>
