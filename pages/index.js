@@ -44,15 +44,35 @@ const OptInForm = () => {
   );
 };
 
+const title = "EmojiLock | Making your Caps Lock key useful again!";
+const description =
+  "EmojiLock is a desktop app that will let you repurpose your Caps Lock key to quickly and easily write emojis from your computer.";
+const imagePath = "https://emojilock.app/static/og.jpg";
+
 const Home = () => (
   <div>
     <Head>
-      <title>EmojiLock | Making your Caps Lock key useful again!</title>
-      <meta
-        name="description"
-        content="EmojiLock is a desktop app that will let you repurpose your Caps Lock key to quickly and easily write emojis from your computer."
-      />
+      {/* General */}
+      <title>{title}</title>
+      <meta name="description" content={description} />
       <meta name="robots" content="index, follow" />
+
+      {/* Twitter */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@EmojiLock" />
+      <meta name="twitter:creator" content="@EmojiLock" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={imagePath} />
+
+      {/* Facebook */}
+      <meta property="og:url" content="https://emojilock.app" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:image" content={imagePath} />
+
+      {/* Imports */}
       <link
         href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
         rel="stylesheet"
