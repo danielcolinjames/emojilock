@@ -1,13 +1,12 @@
-import React from 'react'
-import Head from 'next/head'
+import React from "react";
+import Head from "next/head";
 import { useForm } from "@statickit/react";
 
 const OptInForm = () => {
   const [state, submit] = useForm({
-    site: '818599f0408b',
-    form: 'contact-form'
+    site: "818599f0408b",
+    form: "contact-form"
   });
-
 
   if (state.succeeded) {
     return (
@@ -42,13 +41,18 @@ const OptInForm = () => {
         </button>
       </div>
     </form>
-  )
-}
+  );
+};
 
 const Home = () => (
   <div>
     <Head>
-      <title>EmojiLock</title>
+      <title>EmojiLock | Making your Caps Lock key useful again!</title>
+      <meta
+        name="description"
+        content="EmojiLock is a desktop app that will let you repurpose your Caps Lock key to quickly and easily write emojis from your computer."
+      />
+      <meta name="robots" content="index, follow" />
       <link
         href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
         rel="stylesheet"
@@ -59,7 +63,7 @@ const Home = () => (
         <div className="flex flex-wrap items-center pb-4 text-5xl font-bold text-gray-800">
           <h1 className="mr-3">EmojiLock</h1>
           <div className="mt-2 px-3 py-1 text-sm font-bold bg-orange-300 text-orange-800 rounded-full">
-            Coming Soon
+            COMING SOON
           </div>
         </div>
         <p className="pb-6 text-gray-700 text-lg">
@@ -69,6 +73,6 @@ const Home = () => (
       </div>
     </div>
   </div>
-)
+);
 
-export default Home
+export default Home;
