@@ -47,7 +47,7 @@ const OptInForm = () => {
 const title = "EmojiLock | Making your Caps Lock key useful again!";
 const description =
   "EmojiLock is a desktop app that will let you quickly and easily write emojis from your computer.";
-const imagePath = "https://emojilock.app/static/og.jpg";
+const imagePath = "https://emojilock.app/static/og-new.jpg";
 
 const Home = () => (
   <div>
